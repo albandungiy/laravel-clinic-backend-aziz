@@ -1881,6 +1881,7 @@ h6 .badge {
   box-shadow: rgba(103, 119, 239, 0.2) rgba(0, 0, 0, 0.03);
 }
 
+/* Merubah background navbar */
 .navbar-bg {
   content: " ";
   position: absolute;
