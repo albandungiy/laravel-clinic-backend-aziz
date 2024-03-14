@@ -53,6 +53,7 @@ class DoctorController extends Controller
         $doctor = DB::table('doctors')->where('id', $id)->first();
         return view('pages.doctors.show', compact('doctor'));
     }
+    // jangan readonly ya
 
     //edit
     public function edit($id)
