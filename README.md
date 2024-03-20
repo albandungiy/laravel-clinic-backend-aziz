@@ -11,3 +11,4 @@
 
 Klinik Medika merupakan aplikasi klinik berbasis framework Laravel 10. Repository ini merupakan backend dari aplikasi Klinik Medika. Dimana aplikasi dikembangkan dengan Flutter sebagai frontendnya.
 
+Klinik Medika dibangun atas mengikuti kursus FIC 15 bersama mentor Muh Bahri
