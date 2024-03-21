@@ -26,8 +26,15 @@
                         <a class="nav-link" href="{{ route('doctors.index') }}">Doctors</a>
                     </li>
                 </ul>
+                {{-- doctor schedule --}}
+                <ul class="dropdown-menu">
+                    <li class=''>
+                        <a class="nav-link" href="{{ route('doctor-schedules.index') }}">Doctors Schedules</a>
+                    </li>
+                </ul>
             </li>
             <li><a class="nav-link" href="{{ route('users.index') }}"><i class="far fa-user"></i> <span>Users</span></a></li>
             <li><a class="nav-link" href="{{ route('doctors.index') }}"><i class="fa fa-user-md"></i> <span>Doctors</span></a></li>
+            <li><a class="nav-link" href="{{ route('doctor-schedules.index') }}"><i class="fa fa-user-md"></i> <span>Doctors Schedules</span></a></li>
     </aside>
 </div>
