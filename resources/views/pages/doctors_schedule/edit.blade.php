@@ -30,7 +30,7 @@
 
 
                 <div class="card">
-                    <form action="{{ route('doctor-schedules.store') }}" method="POST">
+                    <form action="{{ route('doctor-schedules.update', $schedule->id') }}" method="POST">
                         @csrf
                         <div class="card-header">
                             <h4>Input Text</h4>

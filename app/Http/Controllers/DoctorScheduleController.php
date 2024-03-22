@@ -36,19 +36,84 @@ class DoctorScheduleController extends Controller
 
         $request->validate([
             'doctor_id' => 'required',
-            'day' => 'required',
-            'start_time' => 'required',
-            'end_time' => 'required',
         ]);
 
-        $doctorSchedule = new DoctorSchedule();
-        $doctorSchedule->doctor_id = $request->doctor_id;
-        $doctorSchedule->day = $request->day;
-        $doctorSchedule->start_time = $request->start_time;
-        $doctorSchedule->end_time = $request->end_time;
+        // if senin not empty
+        if ($request->senin) {
+            $doctorSchedule = new DoctorSchedule();
+            $doctorSchedule->doctor_id = $request->doctor_id;
+            $doctorSchedule->day = 'Senin';
+            $doctorSchedule->time = $request->senin;
 
-        $doctorSchedule->save();
-        return redirect()->route('doctors_schedule.index')->with('success', 'Doctor Schedule created successfully.');
+            $doctorSchedule->save();
+        }
+
+        // if selasa not empty
+        if ($request->selasa) {
+            $doctorSchedule = new DoctorSchedule();
+            $doctorSchedule->doctor_id = $request->doctor_id;
+            $doctorSchedule->day = 'Selasa';
+            $doctorSchedule->time = $request->selasa;
+
+            $doctorSchedule->save();
+        }
+
+        // if rabu not empty
+
+        if ($request->rabu) {
+            $doctorSchedule = new DoctorSchedule();
+            $doctorSchedule->doctor_id = $request->doctor_id;
+            $doctorSchedule->day = 'Rabu';
+            $doctorSchedule->time = $request->rabu;
+
+            $doctorSchedule->save();
+        }
+
+        // if kamis not empty
+
+        if ($request->kamis) {
+            $doctorSchedule = new DoctorSchedule();
+            $doctorSchedule->doctor_id = $request->doctor_id;
+            $doctorSchedule->day = 'Kamis';
+            $doctorSchedule->time = $request->kamis;
+
+            $doctorSchedule->save();
+        }
+
+        // if jumat not empty
+
+        if ($request->jumat) {
+            $doctorSchedule = new DoctorSchedule();
+            $doctorSchedule->doctor_id = $request->doctor_id;
+            $doctorSchedule->day = 'Jumat';
+            $doctorSchedule->time = $request->jumat;
+
+            $doctorSchedule->save();
+        }
+
+        // if sabtu not empty
+
+        if ($request->sabtu) {
+            $doctorSchedule = new DoctorSchedule();
+            $doctorSchedule->doctor_id = $request->doctor_id;
+            $doctorSchedule->day = 'Sabtu';
+            $doctorSchedule->time = $request->sabtu;
+
+            $doctorSchedule->save();
+        }
+
+        // if minggu not empty
+
+        if ($request->minggu) {
+            $doctorSchedule = new DoctorSchedule();
+            $doctorSchedule->doctor_id = $request->doctor_id;
+            $doctorSchedule->day = 'Minggu';
+            $doctorSchedule->time = $request->minggu;
+
+            $doctorSchedule->save();
+        }
+
+        return redirect()->route('doctor-schedules.index')->with('success', 'Doctor Schedule created successfully.');
 
     }
 
@@ -80,7 +145,7 @@ class DoctorScheduleController extends Controller
 
         $doctorSchedule->save();
 
-        return redirect()->route('doctors_schedule.index')->with('success', 'Doctor Schedule updated successfully.');
+        return redirect()->route('doctor-schedules.index')->with('success', 'Doctor Schedule updated successfully.');
     }
 
     // destroy schedule
@@ -88,7 +153,7 @@ class DoctorScheduleController extends Controller
     {
         $doctorSchedule = DoctorSchedule::find($id);
         $doctorSchedule->delete();
-        return redirect()->route('doctors_schedule.index')->with('success', 'Doctor Schedule deleted successfully.');
+        return redirect()->route('doctor-schedules.index')->with('success', 'Doctor Schedule deleted successfully.');
     }
 
 }
